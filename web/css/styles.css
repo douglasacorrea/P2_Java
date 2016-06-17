@@ -1,0 +1,184 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15/06/2016, 22:38:05
+    Author     : Douglas
+*/
+
+body {
+	margin: 20px 0;
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #2582A4;
+}
+
+p, ol {
+	text-align: justify;
+}
+
+a {
+	color: #A1A1A1;
+	text-decoration: none;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+	padding: 5px;
+    text-align: left;    
+	
+}
+
+.box {
+  float: left;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+
+a:hover {
+	color: #2582A4;
+}
+
+#header {
+	width: 155%;
+	height: 10%;
+      
+        
+}
+
+#Login {
+    margin: 0;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+
+#banner {
+    float:center;
+}
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+.nome {
+    font-family: Tahoma;
+    font-size: 20px;
+    color: #000000;
+   
+}
+
+.campos {
+    font-family: Tahoma;
+    font-size: 15px;
+    color: #000000;
+}
+.campos-car {
+    font-family: Tahoma;
+    font-size: 15px;
+    font-style: bold;
+    color: #fff;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 50%;
+    position: relative;
+      
+}
+.strap{
+   background-color: #efefef; 
+   width: 60%;
+}
+.strap-car{
+   background-color: #000000; 
+   width: 60%;
+   height: 20px;
+   align-content: center;
+}
+.button {
+    background-color: #000; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button-pq {
+    background-color: #000; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+li {
+    float: left;
+    border-right:1px solid #bbb;
+   
+    
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+input[type=text]{     
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    background: #fff; 
+    border:1px solid #000000;
+    width:150px
+}
+input[type=date]{ 
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    background: #fff; 
+    border:1px solid #000000;
+    width:150px
+}
+
+input[type=password]{ 
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    background: #fff; 
+    border:1px solid #000000;
+    width:150px
+}
