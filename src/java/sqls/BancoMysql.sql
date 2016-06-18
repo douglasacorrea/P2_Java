@@ -13,10 +13,11 @@ CREATE TABLE IF NOT EXISTS `reserva` (
   `ENDDATE` date NOT NULL,
   `CARRO` varchar(50) NOT NULL,
   `NOMEMOTORISTA` varchar(50) NOT NULL,
+  `IDUSUARIO` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela p2java.reserva: ~5 rows (aproximadamente)
+-- Copiando dados para a tabela p2java.reserva: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `reserva` DISABLE KEYS */;
 /*!40000 ALTER TABLE `reserva` ENABLE KEYS */;
 
@@ -27,4 +28,4 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Password` varchar(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;

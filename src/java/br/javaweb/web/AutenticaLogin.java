@@ -37,13 +37,16 @@ public class AutenticaLogin extends HttpServlet {
         Usuario objLogin = new Usuario(login, password);
 // 
         try {
-                if (new UsuarioDAO().getLoginPassword(login, password)) {
+                
+            int idUsuario = new UsuarioDAO().consultarUsuarioPorLoginSenha(login, password);
+            if (idUsuario > 0) {
                 HttpSession sessao = req.getSession();
+                sessao.setAttribute("login", login);
+                sessao.setAttribute("idusuario", idUsuario);
                 sessao.setAttribute("logado", objLogin);
                 resp.sendRedirect(contexto + "/jsp/Index2.jsp");
             } else {
-               // req.getRequestDispatcher("/jsp/LoginFalha.jsp").forward(req, resp);
-                
+                            
                  resp.sendRedirect(contexto + "/jsp/LoginFalha.jsp");
             }
         } catch (JavaWebException ex) {

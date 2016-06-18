@@ -20,6 +20,8 @@ public class UsuarioDAO {
 
     private final String SELECT_USUARIO = "SELECT LOGIN, PASSWORD FROM USUARIO WHERE LOGIN = ? AND PASSWORD = ?";
     
+    
+
     public boolean getLoginPassword(String login, String password) throws JavaWebException {
 
         Connection conn = null;
@@ -81,4 +83,32 @@ public class UsuarioDAO {
         
         return usrs;
     }
+  
+    private final String SELECT_ID_USUARIO = "SELECT ID, LOGIN, PASSWORD FROM USUARIO WHERE LOGIN = ? AND PASSWORD = ?";
+    
+  public int consultarUsuarioPorLoginSenha(String login, String password) throws JavaWebException {
+
+        Connection conn = null;
+        PreparedStatement prepStmt = null;
+        ResultSet userBD = null;
+        Usuario usrs = new Usuario(login, password);
+        
+        try {
+            conn = GerenciadorConexoes.getConexao();
+
+            prepStmt = conn.prepareStatement(SELECT_ID_USUARIO);
+            prepStmt.setString(1, login);
+            prepStmt.setString(2, password);
+            userBD = prepStmt.executeQuery();
+
+            if (userBD.next()) {
+                return userBD.getInt("ID");
+            } else {
+                return 0;
+            }
+        } catch (SQLException E) {
+            return 0;
+        }
+
+  }
 }

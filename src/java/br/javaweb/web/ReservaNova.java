@@ -6,6 +6,7 @@
 package br.javaweb.web;
 
 import br.javaweb.beans.Reserva;
+import br.javaweb.beans.Usuario;
 import br.javaweb.dao.ReservaDAO;
 import br.javaweb.util.JavaWebException;
 import java.io.IOException;
@@ -34,11 +35,14 @@ public class ReservaNova extends HttpServlet {
         String carro = req.getParameter("carro");
         String nomeMotorista = req.getParameter("nomeMotorista");
         String mensagem = null;
-
-       // Reserva objReserva = new Reserva(startDate, endDate, carro, nomeMotorista);
+      // Reserva objReserva = new Reserva(startDate, endDate, carro, nomeMotorista);
 // 
        try {
-            Reserva newReserva = new ReservaDAO().setUserReserva(startDate, endDate, carro, nomeMotorista);
+           HttpSession sessao = req.getSession();
+           int idusuario = Integer.parseInt(sessao.getAttribute("idusuario").toString());
+           
+           
+           Reserva newReserva = new ReservaDAO().setUserReserva(startDate, endDate, carro, nomeMotorista, idusuario);
             mensagem = "Reserva Realizada!";
             resp.sendRedirect(contexto + "/jsp/ReservaSucesso.jsp");
         } catch (JavaWebException ex) {
